@@ -10,7 +10,7 @@ create table acquaintance(
 
 ​    -> CLASS VARCHAR(200) NOT NULL);
 
-![]()
+![](https://github.com/yxy626/homework03/blob/master/%E6%95%B0%E6%8D%AE%E5%BA%932.png)
 
 ![](https://github.com/yxy626/homework03/blob/master/%E6%95%B0%E6%8D%AE%E5%BA%931.png)
 
@@ -26,7 +26,7 @@ Class使用的函数是“=CHAR(INT(RAND())32+RANDBETWEEN(75,80))&CHAR(95)&CHAR(
 
 最后，生成CSV文件，导入phpmyadmin页面。
 
-![](C:\Users\oysd\Desktop\数据库3.png)
+![](https://github.com/yxy626/homework03/blob/master/%E6%95%B0%E6%8D%AE%E5%BA%933.png)
 
 # 习题二
 
