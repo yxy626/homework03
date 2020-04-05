@@ -1,3 +1,150 @@
+#习题零
+##测试使用python或php连接两种以上数据库服务端，并执行简单查询并打印返回结果
+MYSQL连接
+```
+<?php
+
+$mysql_server_name = 'localhost:3306'; 
+
+$mysql_username = 'root'; 
+
+$mysql_password = ''; 
+
+$mysql_database = 'test'; 
+
+$conn=mysqli_connect($mysql_server_name,$mysql_username,$mysql_password,$mysql_database); //连接数据库
+
+//连接数据库错误提示
+
+if (mysqli_connect_errno($conn)) { 
+
+    die("连接 MySQL 失败: " . mysqli_connect_error()); 
+
+}
+
+mysqli_query($conn,"set names utf8"); 
+
+//查询代码
+
+$sql = "SELECT * 
+              FROM student";
+
+$query = mysqli_query($conn,$sql);
+
+while($row = mysqli_fetch_array($query,MYSQLI_ASSOC)){
+
+    echo $row['sname'];
+	echo "</br>";
+
+}
+
+//查询代码
+
+mysqli_close($conn);
+
+?>
+```
+SQLITE3
+```
+<?php
+   class MyDB extends SQLite3
+   {
+      function __construct()
+      {
+         $this->open('friend.db');
+      }
+   }
+   $db = new MyDB();
+   if(!$db){
+      echo $db->lastErrorMsg();
+   } else {
+      echo "Opened database successfully\n";
+   }
+?>
+
+```
+##测试python或php使用两种以上不同方法连接同一数据库服务端，并执行简单查询并打印返回结果
+方法一
+```
+<?php
+
+$mysql_server_name = 'localhost:3306'; 
+
+$mysql_username = 'root'; 
+
+$mysql_password = ''; 
+
+$mysql_database = 'test'; 
+
+$conn=mysqli_connect($mysql_server_name,$mysql_username,$mysql_password,$mysql_database); //连接数据库
+
+//连接数据库错误提示
+
+if (mysqli_connect_errno($conn)) { 
+
+    die("连接 MySQL 失败: " . mysqli_connect_error()); 
+
+}
+
+mysqli_query($conn,"set names utf8"); 
+
+//查询代码
+
+$sql = "SELECT * 
+              FROM student";
+
+$query = mysqli_query($conn,$sql);
+
+while($row = mysqli_fetch_array($query,MYSQLI_ASSOC)){
+
+    echo $row['sname'];
+	echo "</br>";
+
+}
+
+//查询代码
+
+mysqli_close($conn);
+
+?>
+```
+方式二
+```
+<?php
+$conn = new mysqli('localhost:3306', 'root', '', 'test');
+
+// $conn = new mysqli();
+
+// $conn -> connect('localhost', 'root', 'password', 'test');
+
+
+if ($conn -> connect_errno) {
+
+    printf("Connect failed: %s\n", $conn->connect_error);
+
+    exit();
+
+}
+
+//查询代码
+
+$sql = "SELECT * 
+              FROM student";
+
+$query = $conn->query($sql);
+
+while($row = $query->fetch_array()){
+
+    echo $row['sno'];
+	echo "</br>";
+
+}
+
+
+$conn -> close();
+
+?>
+```
 # 习题一
 
 ## 定义语句
