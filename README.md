@@ -10,9 +10,9 @@ create table acquaintance(
 
 ​    -> CLASS VARCHAR(200) NOT NULL);
 
-![](C:\Users\oysd\Desktop\数据库2.png)
+![]()
 
-![](C:\Users\oysd\Desktop\数据库1.png)
+![](https://github.com/yxy626/homework03/blob/master/%E6%95%B0%E6%8D%AE%E5%BA%931.png)
 
 ## 生成测试数据
 
